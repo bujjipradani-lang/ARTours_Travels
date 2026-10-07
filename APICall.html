@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call</title>
+</head>
+<body>
+    <script>
+
+import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({apiKey: AQ.Ab8RN6L5SIxyiMK5K3c-sF1zKEvcYTIWk9XrxhA9lcwDnpN9bA/ask_gowtham});
+
+const interaction = await ai.interactions.create({
+  model: "gemini-3.8-flash",
+  input: "Explain how AI works in a few words",  
+});
+console.log(interaction.output_text);
+
+main();
+
+/*===
+Key
+===*/
+
+// import {GoogleGenAI} from '@google/genai';
+// const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+// const ai = new GoogleGenAI({apiKey: GEMINI_API_KEY});
+
+// async function main() {
+//   const response = await ai.models.generateContent({
+//     model: 'gemini-flash-latest',
+//     contents: 'Why is the sky blue?',
+//   });
+//   console.log(response.text);
+// }
+
+// main();
+
+    </script>
+</body>
+</html>
